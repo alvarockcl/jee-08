@@ -1,0 +1,56 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Aplicacion WEB</display-name>
+  <servlet>
+  	<servlet-name>Poblar</servlet-name>
+  	<display-name>Poblar</display-name>
+  	<description></description>
+  	<servlet-class>cl.fuentes.servlet.Poblar</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Productoingreso</servlet-name>
+  	<display-name>Productoingreso</display-name>
+  	<description></description>
+  	<servlet-class>cl.fuentes.servlet.Productoingreso</servlet-class>
+  </servlet>
+  
+    <context-param>
+    <param-name>resteasy.scan</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  
+   <context-param>
+    <param-name>resteasy.servlet.mapping.prefix</param-name>
+    <param-value>/rest</param-value>
+  </context-param> 
+  
+  
+   <listener>
+    <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+  </listener>
+  
+   <servlet>
+    <servlet-name>resteasy-servlet</servlet-name>
+    <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+    <servlet-name>resteasy-servlet</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping> 
+  
+  
+  <servlet-mapping>
+  	<servlet-name>Poblar</servlet-name>
+  	<url-pattern>/Poblar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Productoingreso</servlet-name>
+  	<url-pattern>/Productoingreso</url-pattern>
+  </servlet-mapping>
+  
+ 
+</web-app>
