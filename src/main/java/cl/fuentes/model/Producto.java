@@ -6,7 +6,8 @@ import javax.persistence.*;
 @Entity
 @Table(name="PRODUCTO")
 @NamedQueries({
-	@NamedQuery(name="Producto.findAll", query="SELECT p FROM Producto p")
+	@NamedQuery(name="Producto.findAll", query="SELECT p FROM Producto p"),
+	@NamedQuery(name="Producto.todosproductos", query="SELECT p FROM Producto p")
 	
 })
 public class Producto implements Serializable{
