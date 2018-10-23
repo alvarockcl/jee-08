@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import cl.fuentes.model.Producto;
 import cl.fuentes.model.Vendedor;
 
 
@@ -21,8 +22,7 @@ public class VendedorLocal extends Abstractgeneral<Vendedor> implements Vendedor
 
 	@Override
 	public Vendedor buscarPorID(int idvendedor) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Vendedor.class, idvendedor);
 	}
 
 	@Override
